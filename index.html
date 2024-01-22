@@ -1,66 +1,53 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <title>Act.2_Mycal.</title>
-  <style>
-  body{
-    background:gray;
-  }
-  
-  input[type="text"] {
-  width: 240px;
-  padding: 10px;
-  boarder-radius:5px;
-  
-  } 
-  input[type="button"] {
-  width: 63px;
-  padding: 10px;
-  font-size:17px;
-  font-weigh:bold;
-  boader-radius:5px;
-  margin-top: 2px;
-  background:gray;
-  }
-  .calcu {
-    width:270px;
-    margin:auto;
-    hieght:auto;
-    background:black;
-    padding:20px;
-  }
-  h4{
-    color:pink;
-    margin:5px;
-  }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          align-items: center;
+          flex-direction: column;
+          display: flex;
+          background-image: repeating-conic-gradient(red 10%, yellow 20%);
+        }
+        #Box {
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            margin-top: 50px;
+            border: 4px ridge;
+        }
+        button {
+            padding: 20px;
+            margin: 400px;
+            margin-top: 100px;
+            width: 200px;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 20px;
+            background-image: linear-gradient(to right, green, aqua, blue);
+        }
+    </style>
 </head>
 <body>
-  <table id="calcu">
-    <h4>My calculator</h4>
-   <tr>
-    <td colspan="3">
-      <input type="text" id="result" disabled>
-    </td>
-    <td><input type="button" onclick="clear()" value="c"</td>
-   </tr> 
-     
-   <tr>
-     <td><input type="button" onlclick="append(1)" value="1"</td> 
-     
-     
-     
-   </tr>
-     
-    
-    
-    
-    
-    
-    
-    
-    
-  </table>
+    <div id="Box"></div>
+    <button id="changeColorBtn">Change Color</button>
+
+    <script>
+        const colorBox = document.getElementById("Box");
+        let changeColorBtn = document.getElementById("changeColorBtn");
+
+        changeColorBtn.addEventListener('click', changeColor);
+
+        function changeColor() {
+            if (colorBox.style.backgroundColor === "green") {
+                colorBox.style.backgroundColor = "blue";
+            } else {
+                colorBox.style.backgroundColor = "green";
+            }
+        }
+    </script>
 </body>
 </html>
